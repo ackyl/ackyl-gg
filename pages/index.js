@@ -8,21 +8,18 @@ export default function Home({ articles }) {
   return (
     <>
       <div className="home">
-        <div className="home-header">
+        {/* <div className="home-header">
           <img src="/images/timefold-header-3.png"></img>
           <p>Design, development, and everything in between.</p>
-        </div>
+        </div> */}
 
-        <div className="articles-title">
-          <p>Latest</p>
-          <div></div>
-        </div>
+        <p>Work in Progress</p>
 
-        <div className="articles">
+        {/* <div className="articles">
           {articles.map((article, index) => (
             <Article key={index} article={article} />
           ))}
-        </div>
+        </div> */}
       </div>
     </>
   );

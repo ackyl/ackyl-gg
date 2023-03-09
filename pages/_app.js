@@ -7,10 +7,10 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Timefold</title>
+        <title>Atelier of Wonder</title>
         <link rel="icon" href="/icon.png" />
       </Head>
-      <Header />
+      {/* <Header /> */}
       <main className="main-container">
         <div className="container">
           <Component {...pageProps} />
