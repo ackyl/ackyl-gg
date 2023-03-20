@@ -1,0 +1,51 @@
+.cursor {
+  position: fixed;
+  border-radius: 100%;
+  height: 16px;
+  width: 16px;
+  top: -100px;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 1000;
+  transition: width 0.5s, height 0.5s;
+
+  &--hovered {
+    width: 48px;
+    height: 48px;
+    transition: width 0.5s, height 0.5s;
+  }
+
+  &__outer {
+    position: fixed;
+    border-radius: 100%;
+    top: -100px;
+    height: 64px;
+    width: 64px;
+    transform: translate(-50%, -50%);
+    border: 2px dashed white;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    z-index: 1000;
+    animation: spin 6s infinite linear;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+
+    &--hovered {
+      opacity: 1;
+      transition: opacity 2s ease;
+    }
+  }
+
+  &__wrapper--hidden {
+    display: none;
+  }
+}
+
+// animation eternally spin
+@keyframes spin {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

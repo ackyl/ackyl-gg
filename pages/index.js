@@ -54,12 +54,14 @@ export default function Home({ articles }) {
               <p>
                 of <strong>Wonder</strong>
               </p>
-              <img
-                src="/images/wonder.png"
-                className="objective__image"
-                onMouseEnter={() => setIsShown(true)}
-                onMouseLeave={() => setIsShown(false)}
-              />
+              <a>
+                <img
+                  src="/images/wonder.png"
+                  className="objective__image"
+                  onMouseEnter={() => setIsShown(true)}
+                  onMouseLeave={() => setIsShown(false)}
+                />
+              </a>
               <p>.</p>
             </div>
 
@@ -83,10 +85,6 @@ export default function Home({ articles }) {
     </>
   );
 }
-
-const onHover = () => {
-  console.log("what???");
-};
 
 export async function getStaticProps() {
   // This happens in the server

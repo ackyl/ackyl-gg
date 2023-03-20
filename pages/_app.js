@@ -2,6 +2,7 @@ import "../styles/style.scss";
 
 import Head from "next/head";
 import Header from "../components/Header";
+import Cursor from "../components/Cursor";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -11,6 +12,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/icon.png" />
       </Head>
       <Header />
+      <Cursor />
       <main className="main-container">
         <div className="container">
           <Component {...pageProps} />

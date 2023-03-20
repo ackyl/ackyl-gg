@@ -4,12 +4,82 @@
   justify-content: space-between;
   width: 100%;
   padding: 40px;
+  z-index: 99;
   &__title {
     color: var(--white);
     font-weight: 600;
+    transition: 0.5s all ease;
+    &--black {
+      color: var(--black);
+      transition: 0.5s all ease;
+    }
   }
   &__menu {
     color: var(--white);
     font-weight: 600;
+    transition: 0.5s all ease;
+    cursor: pointer;
+    &--black {
+      transition: 0.5s all ease;
+      color: var(--black);
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: var(--white);
+  z-index: 98;
+  animation: slideIn 0.5s ease-in-out;
+  &--hidden {
+    animation: slideOut 0.5s ease-in-out;
+    transform: translateX(-100%);
+  }
+  &__item {
+    display: flex;
+    width: 480px;
+    align-items: center;
+  }
+  &__item:not(:last-child) {
+    margin-bottom: 40px;
+  }
+  &__item > a {
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--black);
+  }
+  &__line {
+    flex: 1;
+    height: 1px;
+    background-color: var(--black);
+  }
+  &__wrapper {
+    display: none;
+  }
+}
+
+// animation for menu, sliding from right to left
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+//animation for menuHidden, sliding from left to right
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }

@@ -1,12 +1,77 @@
+import { useState } from "react";
 import Link from "next/link";
 
+// create state of hideMenu
+
 export default function Header() {
+  const [hideMenu, setHideMenu] = useState(true);
+  const [menuClickable, setMenuClickable] = useState(true);
+  const [menuText, setMenuText] = useState(true);
+  const [initiate, setInitiate] = useState(false);
+
+  const onMenuClick = async () => {
+    if (menuClickable) {
+      setInitiate(true);
+      setMenuClickable(false);
+      setHideMenu(!hideMenu);
+      document.body.style.overflow = hideMenu ? "hidden" : "visible";
+      // delay 500ms before setting menuClickable to true
+      setTimeout(() => {
+        setMenuClickable(true);
+        setMenuText(hideMenu ? false : true);
+      }, 500);
+    }
+  };
+
   return (
-    <header className="header">
-      <Link href="/" className="header__title">
-        ackyl.gg
-      </Link>
-      <div className="header__menu">menu</div>
-    </header>
+    <>
+      <header className="header">
+        <Link
+          href="/"
+          className={
+            menuText ? "header__title" : "header__title header__title--black"
+          }
+        >
+          ackyl.gg
+        </Link>
+        {/* create on click div with class header__menu that is clickable */}
+        <a
+          className={
+            menuText ? "header__menu" : "header__menu header__menu--black"
+          }
+          onClick={onMenuClick}
+        >
+          {menuText ? "menu" : "close"}
+        </a>
+      </header>
+      <div className={!initiate ? "menu__wrapper" : ""}>
+        <div className={hideMenu ? "menu menu--hidden" : "menu"}>
+          <div className="menu__item">
+            <Link href="/" onClick={onMenuClick}>
+              Home
+            </Link>
+            <div className="menu__line"></div>
+          </div>
+          <div className="menu__item">
+            <div className="menu__line"></div>
+            <Link href="/" onClick={onMenuClick}>
+              Project
+            </Link>
+          </div>
+          <div className="menu__item">
+            <Link href="/" onClick={onMenuClick}>
+              Blog
+            </Link>
+            <div className="menu__line"></div>
+          </div>
+          <div className="menu__item">
+            <div className="menu__line"></div>
+            <Link href="/" onClick={onMenuClick}>
+              Contact
+            </Link>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
