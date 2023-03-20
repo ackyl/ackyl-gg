@@ -194,9 +194,12 @@
 // Projects
 
 .project {
+  display: flex;
+  flex-direction: column;
   position: relative;
   width: 960px;
-
+  align-items: center;
+  justify-content: center;
   &__link {
     width: 100%;
     height: 100%;
@@ -214,16 +217,33 @@
     font-weight: 600;
     color: var(--white);
   }
-  &__number {
-    flex: 1;
-    text-align: right;
+  &__all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--white);
-    font-weight: 200;
+    font-weight: 600;
+    padding: 16px 24px;
+    border-radius: 40px;
+    margin-top: 40px;
+  }
+  &__all.red {
+    background-color: var(--red);
+  }
+  &__all.green {
+    background-color: var(--green);
+  }
+  &__all.blue {
+    background-color: var(--blue);
+  }
+  &__all > p {
+    margin-right: 8px;
   }
   &__description {
     font-size: 16px;
     font-weight: 200;
     color: var(--white);
+    text-align: center;
   }
   &__list {
     display: flex;
@@ -231,25 +251,29 @@
     margin-top: 40px;
     flex-wrap: nowrap;
     overflow: hidden;
+    width: 100%;
     &__image {
-      width: 200px;
+      width: 100%;
       height: 200px;
       object-fit: cover;
       object-position: center;
       border-radius: 8px;
     }
     &__item {
+      flex: 1;
       position: relative;
-      margin-right: 24px;
+    }
+    &__item:not(:last-child) {
+      margin-right: 40px;
     }
   }
   &__image {
-    width: 160px;
+    width: 40px;
     height: 40px;
     object-fit: cover;
     object-position: center;
     border-radius: 80px;
-    margin-left: 8px;
+    margin-left: 16px;
   }
 }
 

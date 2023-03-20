@@ -23,28 +23,8 @@ export default function Header() {
     }
   };
 
-  return (
-    <>
-      <header className="header">
-        <Link
-          href="/"
-          className={
-            menuText ? "header__title" : "header__title header__title--black"
-          }
-        >
-          ackyl.gg
-        </Link>
-        {/* create on click div with class header__menu that is clickable */}
-        <a
-          className={
-            menuText ? "header__menu" : "header__menu header__menu--black"
-          }
-          onClick={onMenuClick}
-        >
-          {menuText ? "menu" : "close"}
-        </a>
-      </header>
-
+  const renderMenu = () => {
+    return (
       <div className={!initiate ? "menu__wrapper" : ""}>
         <div className={hideMenu ? "menu menu--hidden" : "menu"}>
           <div className="menu__item">
@@ -60,7 +40,7 @@ export default function Header() {
             </Link>
           </div>
           <div className="menu__item">
-            <Link href="/" onClick={onMenuClick}>
+            <Link href="/contact" onClick={onMenuClick}>
               Contact
             </Link>
             <div className="menu__line"></div>
@@ -73,6 +53,32 @@ export default function Header() {
           </div>
         </div>
       </div>
+    );
+  };
+
+  return (
+    <>
+      <header className="header">
+        <Link
+          href="/"
+          className={
+            menuText ? "header__title" : "header__title header__title--black"
+          }
+        >
+          ackyl.gg
+        </Link>
+
+        <a
+          className={
+            menuText ? "header__menu" : "header__menu header__menu--black"
+          }
+          onClick={onMenuClick}
+        >
+          {menuText ? "menu" : "close"}
+        </a>
+      </header>
+
+      {renderMenu()}
     </>
   );
 }
