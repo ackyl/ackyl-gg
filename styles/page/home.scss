@@ -7,6 +7,23 @@
   align-items: center;
   flex-direction: column;
   overflow: hidden;
+  @include sm {
+    padding: 24px;
+  }
+  &--free {
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 0 0 160px 0;
+    @include sm {
+      padding: 80px 24px;
+    }
+  }
 }
 
 .intro {
@@ -16,6 +33,7 @@
   font-weight: 300;
   @include sm {
     font-size: 16px;
+    margin-bottom: 8px;
   }
 }
 
@@ -25,19 +43,27 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 300px;
-  width: 300px;
+  height: 400px;
+  width: 400px;
+  @include sm {
+    height: 300px;
+    width: 300px;
+  }
   &__line {
     position: absolute;
     top: 0;
     left: 0;
-    width: 294px;
-    height: 294px;
+    width: 400px;
+    height: 400px;
     border-radius: 100%;
     -webkit-animation: spin-right 20s linear infinite;
     animation: spin-right 20s linear infinite;
     background: var(--gradient);
     padding: 2px;
+    @include sm {
+      height: 300px;
+      width: 300px;
+    }
   }
   &__block {
     background-color: var(--black);
@@ -47,12 +73,16 @@
   }
   &__circle {
     position: absolute;
-    top: -8px;
+    top: 2px;
     left: 125px;
     height: 20px;
     width: 20px;
     border-radius: 100%;
     animation: color-change 12s infinite;
+    @include sm {
+      top: -8px;
+      left: 125px;
+    }
   }
 }
 
@@ -100,6 +130,9 @@
 
 .objective {
   max-width: 800px;
+  @include sm {
+    max-width: 100%;
+  }
   &__text {
     margin-bottom: 8px;
     display: flex;
@@ -121,7 +154,6 @@
   &__image {
     height: 36px;
     margin: 0 16px;
-    cursor: pointer;
     @include sm {
       height: 24px;
     }
@@ -159,10 +191,68 @@
   }
 }
 
-// Project
+// Projects
 
 .project {
-  background-color: var(--red);
-  height: calc(100vh / 8);
-  width: 100vw;
+  position: relative;
+  width: 960px;
+
+  &__link {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  &__detail {
+    display: flex;
+    margin-bottom: 24px;
+    align-items: center;
+  }
+  &__title {
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--white);
+  }
+  &__number {
+    flex: 1;
+    text-align: right;
+    color: var(--white);
+    font-weight: 200;
+  }
+  &__description {
+    font-size: 16px;
+    font-weight: 200;
+    color: var(--white);
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    &__image {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 8px;
+    }
+    &__item {
+      position: relative;
+      margin-right: 24px;
+    }
+  }
+  &__image {
+    width: 160px;
+    height: 40px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 80px;
+    margin-left: 8px;
+  }
+}
+
+.project__wrapper > div:not(:last-child) {
+  margin-bottom: 40px;
 }

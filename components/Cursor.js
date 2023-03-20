@@ -34,7 +34,6 @@ const customCursor = () => {
 
     links.forEach((link) => {
       link.addEventListener("mouseover", () => {
-        console.log("test");
         cursor.classList.add("cursor--hovered");
         outerCursor.classList.add("cursor__outer--hovered");
       });

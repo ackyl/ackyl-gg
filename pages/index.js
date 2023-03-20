@@ -50,7 +50,7 @@ export default function Home(props) {
               <p>This atelier is dedicated to the</p>
             </div>
             <div className="objective__text">
-              <p>extraction, experimentation, and production</p>
+              <p>extraction and experimentation</p>
             </div>
             <div className="objective__text">
               <p>
@@ -78,6 +78,113 @@ export default function Home(props) {
             </div>
           </div>
         </div>
+
+        {/* Projects */}
+        {/* <div className="section">
+          <div className="project">
+            <div className="project__detail">
+              <p className="project__title">Timefold</p>
+              <img src="/images/wonder.png" className="project__image" />
+              <div className="project__number">VIEW ALL WORKS</div>
+            </div>
+            <p className="project__description">
+              An electronic music project that explores the soundscape and
+              soundtrack to a world that is not fully born yet. It is derived
+              from various captivating stories and its immersive worlds,
+              particularly in the form of anime and video game.
+            </p>
+            <div className="project__list">
+              <div className="project__list__item">
+                <img
+                  src="/images/placeholder.png"
+                  className="project__list__image"
+                />
+                <a className="project__link" />
+              </div>
+              <div className="project__list__item">
+                <img
+                  src="/images/placeholder.png"
+                  className="project__list__image"
+                />
+                <a className="project__link" />
+              </div>
+              <div className="project__list__item">
+                <img
+                  src="/images/placeholder.png"
+                  className="project__list__image"
+                />
+                <a className="project__link" />
+              </div>
+              <div className="project__list__item">
+                <img
+                  src="/images/placeholder.png"
+                  className="project__list__image"
+                />
+                <a className="project__link" />
+              </div>
+              <div className="project__list__item">
+                <img
+                  src="/images/placeholder.png"
+                  className="project__list__image"
+                />
+                <a className="project__link" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="section">
+          <div className="project">
+            <div className="project__detail">
+              <p className="project__title">Inter + Faces</p>
+              <img src="/images/wonder.png" className="project__image" />
+              <div className="project__number">VIEW ALL WORKS</div>
+            </div>
+            <p className="project__description">
+              An electronic music project that explores the soundscape and
+              soundtrack to a world that is not fully born yet. It is derived
+              from various captivating stories and its immersive worlds,
+              particularly in the form of anime and video game.
+            </p>
+            <div className="project__list">
+              <div className="project__list__item">
+                <img
+                  src="/images/placeholder.png"
+                  className="project__list__image"
+                />
+                <a className="project__link" />
+              </div>
+              <div className="project__list__item">
+                <img
+                  src="/images/placeholder.png"
+                  className="project__list__image"
+                />
+                <a className="project__link" />
+              </div>
+              <div className="project__list__item">
+                <img
+                  src="/images/placeholder.png"
+                  className="project__list__image"
+                />
+                <a className="project__link" />
+              </div>
+              <div className="project__list__item">
+                <img
+                  src="/images/placeholder.png"
+                  className="project__list__image"
+                />
+                <a className="project__link" />
+              </div>
+              <div className="project__list__item">
+                <img
+                  src="/images/placeholder.png"
+                  className="project__list__image"
+                />
+                <a className="project__link" />
+              </div>
+            </div>
+          </div>
+        </div> */}
       </div>
 
       {/* <div className="articles">
