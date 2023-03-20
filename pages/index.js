@@ -3,8 +3,6 @@ import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 import React, { useEffect, useState } from "react";
-import { Fade, Slide } from "react-awesome-reveal";
-import Slider from "react-slick";
 import Typewriter from "typewriter-effect";
 
 import Article from "../components/Article";
@@ -13,8 +11,6 @@ import { sortByDate } from "../utils";
 
 export default function Home({ articles }) {
   const [isShown, setIsShown] = useState(false);
-
-  console.log(articles);
 
   return (
     <>
