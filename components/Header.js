@@ -40,7 +40,7 @@ export default function Header() {
             </Link>
           </div>
           <div className="menu__item">
-            <Link href="/contact" onClick={onMenuClick}>
+            <Link href="/" onClick={onMenuClick}>
               Contact
             </Link>
             <div className="menu__line"></div>
