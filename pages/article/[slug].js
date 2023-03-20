@@ -1,8 +1,8 @@
 import fs from "fs";
-import path from "path";
 import matter from "gray-matter";
 import { marked } from "marked";
 import Link from "next/link";
+import path from "path";
 
 export default function ArticlePage({
   frontmatter: { title, date, subtitle },
@@ -14,7 +14,7 @@ export default function ArticlePage({
       <div className="article-header">
         <div className="article-header__top">
           <div className="article-header__link">
-            <img src="/left-arrow.svg" />
+            <img alt="" src="/left-arrow.svg" />
             <Link href="/"></Link>
           </div>
           <h1>{title}</h1>

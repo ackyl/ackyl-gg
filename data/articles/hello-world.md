@@ -4,7 +4,7 @@ date: "September 5, 2022"
 subtitle: "Testing the markdown capabilities."
 ---
 
-<img class='article-image' src='/images/articles/test.jpg' />
+<img alt=''class='article-image' src='/images/articles/test.jpg' />
 
 # Dixit duobus Graiorum pictas nec reddebant abit
 

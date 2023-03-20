@@ -1,18 +1,15 @@
-import React, { useState, useEffect } from "react";
-
-import Slider from "react-slick";
-
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-
 import fs from "fs";
-import path from "path";
 import matter from "gray-matter";
-import Article from "../components/Article";
-import { sortByDate } from "../utils";
-import Typewriter from "typewriter-effect";
+import path from "path";
+import React, { useEffect, useState } from "react";
 import { Fade, Slide } from "react-awesome-reveal";
+import Slider from "react-slick";
+import Typewriter from "typewriter-effect";
 
+import Article from "../components/Article";
 import useWindowDimensions from "../hooks/useWindowDimensions";
+import { sortByDate } from "../utils";
 
 export default function Home({ articles }) {
   const [isShown, setIsShown] = useState(false);
@@ -88,6 +85,7 @@ const renderObjectiveSection = (isShown, setIsShown) => {
               className="objective__image"
               onMouseEnter={() => setIsShown(true)}
               onMouseLeave={() => setIsShown(false)}
+              alt=""
             />
           </a>
           <p>.</p>
@@ -100,7 +98,7 @@ const renderObjectiveSection = (isShown, setIsShown) => {
               : "wonder__wrapper wonder__wrapper--hidden"
           }
         >
-          <img className="wonder" src="/images/wonder-slide.png" />
+          <img alt="" className="wonder" src="/images/wonder-slide.png" />
         </div>
       </div>
     </div>
@@ -114,7 +112,7 @@ const renderProjectsSection = () => {
         <div className="project">
           <div className="project__detail">
             <p className="project__title">Inter + Faces</p>
-            <img src="/images/wonder.png" className="project__image" />
+            <img alt="" src="/images/wonder.png" className="project__image" />
           </div>
 
           <p className="project__description">
@@ -126,15 +124,27 @@ const renderProjectsSection = () => {
 
           <div className="project__list">
             <div className="project__list__item">
-              <img src="/images/inter-2.png" className="project__list__image" />
+              <img
+                alt=""
+                src="/images/inter-2.png"
+                className="project__list__image"
+              />
               <a className="project__link" />
             </div>
             <div className="project__list__item">
-              <img src="/images/inter-2.png" className="project__list__image" />
+              <img
+                alt=""
+                src="/images/inter-2.png"
+                className="project__list__image"
+              />
               <a className="project__link" />
             </div>
             <div className="project__list__item">
-              <img src="/images/inter-3.png" className="project__list__image" />
+              <img
+                alt=""
+                src="/images/inter-3.png"
+                className="project__list__image"
+              />
               <a className="project__link" />
             </div>
           </div>
@@ -148,7 +158,7 @@ const renderProjectsSection = () => {
         <div className="project">
           <div className="project__detail">
             <p className="project__title">Whitenoise Wishes</p>
-            <img src="/images/wonder.png" className="project__image" />
+            <img alt="" src="/images/wonder.png" className="project__image" />
           </div>
 
           <p className="project__description">
@@ -163,6 +173,7 @@ const renderProjectsSection = () => {
               <img
                 src="/images/whitenoise-1.png"
                 className="project__list__image"
+                alt=""
               />
               <a className="project__link" />
             </div>
@@ -170,6 +181,7 @@ const renderProjectsSection = () => {
               <img
                 src="/images/whitenoise-2.png"
                 className="project__list__image"
+                alt=""
               />
               <a className="project__link" />
             </div>
@@ -177,6 +189,7 @@ const renderProjectsSection = () => {
               <img
                 src="/images/whitenoise-3.png"
                 className="project__list__image"
+                alt=""
               />
               <a className="project__link" />
             </div>
@@ -191,7 +204,7 @@ const renderProjectsSection = () => {
         <div className="project">
           <div className="project__detail">
             <p className="project__title">Blindharp Studio</p>
-            <img src="/images/wonder.png" className="project__image" />
+            <img alt="" src="/images/wonder.png" className="project__image" />
           </div>
 
           <p className="project__description">

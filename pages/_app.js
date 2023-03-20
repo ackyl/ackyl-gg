@@ -1,14 +1,15 @@
 import "../styles/style.scss";
 
 import Head from "next/head";
-import Header from "../components/Header";
+
 import Cursor from "../components/Cursor";
+import Header from "../components/Header";
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Ackyl's Atelier of Wonder</title>
+        <title>𝔞𝔱𝔢𝔩𝔦𝔢𝔯 𝔬𝔣 𝔴𝔬𝔫𝔡𝔢𝔯</title>
         <link rel="icon" href="/icon.png" />
       </Head>
       <Header />
