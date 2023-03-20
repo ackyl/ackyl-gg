@@ -44,31 +44,32 @@ export default function Header() {
           {menuText ? "menu" : "close"}
         </a>
       </header>
+
       <div className={!initiate ? "menu__wrapper" : ""}>
         <div className={hideMenu ? "menu menu--hidden" : "menu"}>
           <div className="menu__item">
             <Link href="/" onClick={onMenuClick}>
-              Home
-            </Link>
-            <div className="menu__line"></div>
-          </div>
-          <div className="menu__item">
-            <div className="menu__line"></div>
-            <Link href="/" onClick={onMenuClick}>
               Project
             </Link>
+            <div className="menu__line"></div>
           </div>
           <div className="menu__item">
+            <div className="menu__line"></div>
             <Link href="/" onClick={onMenuClick}>
               Blog
             </Link>
-            <div className="menu__line"></div>
           </div>
           <div className="menu__item">
-            <div className="menu__line"></div>
             <Link href="/" onClick={onMenuClick}>
               Contact
             </Link>
+            <div className="menu__line"></div>
+          </div>
+          <div className="menu__message">
+            <p>
+              This website is still under construction and is best viewed on
+              desktop.
+            </p>
           </div>
         </div>
       </div>

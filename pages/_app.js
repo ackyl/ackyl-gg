@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Atelier of Wonder</title>
+        <title>Ackyl's Atelier of Wonder</title>
         <link rel="icon" href="/icon.png" />
       </Head>
       <Header />

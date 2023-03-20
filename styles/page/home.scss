@@ -14,81 +14,8 @@
   font-size: 24px;
   margin-bottom: 24px;
   font-weight: 300;
-}
-
-.objective {
-  max-width: 800px;
-  &__text {
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  &__text > p {
-    color: var(--white);
-    text-align: center;
-    font-size: 24px;
-    font-weight: 200;
-    strong {
-      font-weight: 800;
-    }
-  }
-  &__image {
-    height: 36px;
-    margin: 0 16px;
-    cursor: pointer;
-  }
-}
-
-.wonder {
-  width: 3840px;
-  position: relative;
-  left: 0;
-  top: 0;
-  animation: slide 8s linear infinite;
-  &__wrapper {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(0, -50%);
-    z-index: -1;
-    animation: fadeInFromNone 0.5s ease-out;
-  }
-}
-
-@keyframes slide {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  100% {
-    transform: translate3d(-33.333333%, 0, 0);
-  }
-}
-
-@keyframes fadeInFromNone {
-  0% {
-    display: none;
-    opacity: 0;
-  }
-
-  1% {
-    display: block;
-    opacity: 0;
-  }
-
-  100% {
-    display: block;
-    opacity: 1;
-  }
-}
-
-.Typewriter {
-  display: block;
-  &__wrapper {
-    color: var(--white);
-    font-size: 48px;
-    font-weight: 800;
+  @include sm {
+    font-size: 16px;
   }
 }
 
@@ -156,6 +83,83 @@
     background-color: var(--red);
   }
 }
+
+.Typewriter {
+  display: block;
+  &__wrapper {
+    color: var(--white);
+    font-size: 48px;
+    font-weight: 800;
+    @include sm {
+      font-size: 24px;
+    }
+  }
+}
+
+// Objective
+
+.objective {
+  max-width: 800px;
+  &__text {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__text > p {
+    color: var(--white);
+    text-align: center;
+    font-size: 24px;
+    font-weight: 200;
+    strong {
+      font-weight: 800;
+    }
+    @include sm {
+      font-size: 16px;
+    }
+  }
+  &__image {
+    height: 36px;
+    margin: 0 16px;
+    cursor: pointer;
+    @include sm {
+      height: 24px;
+    }
+  }
+}
+
+.wonder {
+  width: 3840px;
+  position: relative;
+  left: 0;
+  top: 0;
+  animation: slide 8s linear infinite;
+  &__wrapper {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    z-index: -1;
+    opacity: 1;
+    transition: 1s all ease;
+    &--hidden {
+      opacity: 0;
+      transition: 0.5s all ease;
+    }
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-33.333333%, 0, 0);
+  }
+}
+
+// Project
 
 .project {
   background-color: var(--red);

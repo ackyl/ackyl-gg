@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import fs from "fs";
 import path from "path";
@@ -8,7 +8,9 @@ import { sortByDate } from "../utils";
 import Typewriter from "typewriter-effect";
 import { Fade, Slide } from "react-awesome-reveal";
 
-export default function Home({ articles }) {
+import useWindowDimensions from "../hooks/useWindowDimensions";
+
+export default function Home(props) {
   const [isShown, setIsShown] = useState(false);
 
   return (
@@ -65,16 +67,17 @@ export default function Home({ articles }) {
               <p>.</p>
             </div>
 
-            {isShown && (
-              <div className="wonder__wrapper">
-                <img className="wonder" src="/images/wonder-slide.png" />
-              </div>
-            )}
+            <div
+              className={
+                isShown
+                  ? "wonder__wrapper"
+                  : "wonder__wrapper wonder__wrapper--hidden"
+              }
+            >
+              <img className="wonder" src="/images/wonder-slide.png" />
+            </div>
           </div>
         </div>
-
-        {/* Projects */}
-        <div className="section"></div>
       </div>
 
       {/* <div className="articles">
@@ -86,7 +89,7 @@ export default function Home({ articles }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps(ctx) {
   // This happens in the server
 
   // Get files from the article dir

@@ -45,6 +45,10 @@
     display: flex;
     width: 480px;
     align-items: center;
+    @include sm {
+      width: 100%;
+      padding: 0 40px;
+    }
   }
   &__item:not(:last-child) {
     margin-bottom: 40px;
@@ -53,6 +57,9 @@
     font-size: 40px;
     font-weight: 600;
     color: var(--black);
+    @include sm {
+      font-size: 24px;
+    }
   }
   &__line {
     flex: 1;
@@ -61,6 +68,19 @@
   }
   &__wrapper {
     display: none;
+  }
+  &__message {
+    text-align: center;
+    position: absolute;
+    bottom: 40px;
+    @include sm {
+      padding: 0 40px;
+    }
+  }
+  &__message > p {
+    font-size: 16px;
+    font-weight: 200;
+    color: var(--black);
   }
 }
 
