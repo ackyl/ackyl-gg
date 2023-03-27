@@ -1,11 +1,12 @@
 import "../styles/style.scss";
 
+import type { AppProps } from "next/app";
 import Head from "next/head";
 
 import Cursor from "../components/Cursor";
 import Header from "../components/Header";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>

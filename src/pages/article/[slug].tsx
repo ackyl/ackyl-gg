@@ -3,12 +3,17 @@ import matter from "gray-matter";
 import { marked } from "marked";
 import Link from "next/link";
 import path from "path";
+import { ParsedUrlQuery } from "querystring";
 
 import { Article } from "../../types/common";
 
 export type Props = {
   article: Article;
 };
+
+interface IParams extends ParsedUrlQuery {
+  slug: string;
+}
 
 export default function ArticlePage(props: Props) {
   const {
@@ -52,7 +57,8 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params: { slug } }) {
+export async function getStaticProps(context: { params: IParams }) {
+  const { slug } = context.params;
   const markdownWithMeta = fs.readFileSync(
     path.join("data/articles", slug + ".md"),
     "utf-8"
