@@ -1,11 +1,10 @@
-export type Article = {
-  title: string;
+export type MarkdownObject = {
   content: string;
   slug: string;
-  frontmatter: FrontMatter;
+  metadata: Metadata;
 };
 
-export type FrontMatter = {
+export type Metadata = {
   title: string;
   date: string;
   subtitle: string;

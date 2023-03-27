@@ -1,8 +1,8 @@
-import { Article } from "../types/common";
+import { MarkdownObject } from "../types/common";
 
-export const sortByDate = (a: Article, b: Article) => {
-  const dateA = new Date(a.frontmatter.date);
-  const dateB = new Date(b.frontmatter.date);
+export const sortByDate = (a: MarkdownObject, b: MarkdownObject) => {
+  const dateA = new Date(a.metadata.date);
+  const dateB = new Date(b.metadata.date);
 
   if (dateA < dateB) {
     return 1;

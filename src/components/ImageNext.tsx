@@ -1,4 +1,4 @@
-import Image, { ImageLoader, ImageProps } from "next/image";
+import Image, { ImageProps } from "next/image";
 import { useState } from "react";
 
 import SkeletonLoader from "./SkeletonLoader";

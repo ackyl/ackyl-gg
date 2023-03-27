@@ -1,19 +1,22 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import fs from "fs";
 import matter from "gray-matter";
-import { NextPage } from "next";
 import path from "path";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Typewriter from "typewriter-effect";
 
 import ImageNext from "../components/ImageNext";
 import ImageWrapper from "../components/ImageWrapper";
-import useWindowDimensions from "../hooks/useWindowDimensions";
-import { Article } from "../types/common";
-import { sortByDate } from "../utils";
+import { MarkdownObject, Metadata } from "../types/common";
 
-const HomePage: NextPage = () => {
+export type Props = {
+  data: MarkdownObject[];
+};
+
+const HomePage = (props: Props) => {
   const [isShown, setIsShown] = useState(false);
+
+  console.log(props);
 
   return (
     <>
@@ -24,12 +27,6 @@ const HomePage: NextPage = () => {
 
         {renderProjectsSection()}
       </div>
-
-      {/* <div className="articles">
-        {articles.map((article, index) => (
-          <Article key={index} article={article} />
-        ))}
-      </div> */}
     </>
   );
 };
@@ -170,42 +167,35 @@ const renderProjectsSection = () => {
   );
 };
 
-export async function getStaticProps() {
-  // This happens in the server
+export const getStaticProps = async () => {
+  const files = fs.readdirSync(path.join("src/data/projects/whitenoise"));
 
-  // Get files from the article dir
-  const files = fs.readdirSync(path.join("src/data/articles"));
-
-  // Get slug and frontmatter from articles
-  const articles = files.map((filename) => {
-    // Create slug
+  const whitenoiseProjects = files.map((filename) => {
     const slug = filename.replace(".md", "");
-
-    // Get frontmatter
-    const markdownWithMeta = fs.readFileSync(
-      path.join("src/data/articles", filename),
+    const markdownFile = fs.readFileSync(
+      path.join("src/data/projects/whitenoise", filename),
       "utf-8"
     );
+    const markdownRaw = matter(markdownFile);
 
-    const { data: frontmatter } = matter(markdownWithMeta);
-
-    return {
-      slug,
-      frontmatter,
+    let markdownObject: MarkdownObject = {
+      content: markdownRaw.content,
+      slug: slug,
+      metadata: {
+        title: markdownRaw.data["title"],
+        date: markdownRaw.data["date"],
+        subtitle: markdownRaw.data["subtitle"],
+      },
     };
+
+    return markdownObject;
   });
 
   return {
     props: {
-      test: "Halo!",
+      data: whitenoiseProjects,
     },
   };
-
-  // return {
-  //   props: {
-  //     articles: articles.sort(sortByDate),
-  //   },
-  // };
-}
+};
 
 export default HomePage;

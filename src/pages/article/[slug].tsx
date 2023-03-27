@@ -5,10 +5,10 @@ import Link from "next/link";
 import path from "path";
 import { ParsedUrlQuery } from "querystring";
 
-import { Article } from "../../types/common";
+import { MarkdownObject } from "../../types/common";
 
 export type Props = {
-  article: Article;
+  article: MarkdownObject;
 };
 
 interface IParams extends ParsedUrlQuery {

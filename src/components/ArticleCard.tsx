@@ -1,19 +1,19 @@
 import Link from "next/link";
 
-import { Article } from "../types/common";
+import { MarkdownObject } from "../types/common";
 
 type Props = {
-  article: Article;
+  markdown: MarkdownObject;
 };
 
-export default function ArticleCard({ article }: Props) {
+export default function ArticleCard({ markdown }: Props) {
   return (
-    <div className="article-card">
-      <h3>{article.frontmatter.title}</h3>
+    <div className="markdown-card">
+      <h3>{markdown.metadata.title}</h3>
 
-      <p>{article.frontmatter.subtitle}</p>
+      <p>{markdown.metadata.subtitle}</p>
 
-      <Link href={`/article/${article.slug}`}></Link>
+      <Link href={`/markdown/${markdown.slug}`}></Link>
     </div>
   );
 }
