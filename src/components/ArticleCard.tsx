@@ -1,6 +1,12 @@
 import Link from "next/link";
 
-export default function Article({ article }) {
+import { Article } from "../types/common";
+
+type Props = {
+  article: Article;
+};
+
+export default function ArticleCard({ article }: Props) {
   return (
     <div className="article-card">
       <h3>{article.frontmatter.title}</h3>

@@ -1,15 +1,18 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import fs from "fs";
 import matter from "gray-matter";
+import { NextPage } from "next";
 import path from "path";
 import React, { useEffect, useState } from "react";
 import Typewriter from "typewriter-effect";
 
-import Article from "../components/Article";
+import ImageNext from "../components/ImageNext";
+import ImageWrapper from "../components/ImageWrapper";
 import useWindowDimensions from "../hooks/useWindowDimensions";
+import { Article } from "../types/common";
 import { sortByDate } from "../utils";
 
-export default function Home({ articles }) {
+const HomePage: NextPage = () => {
   const [isShown, setIsShown] = useState(false);
 
   return (
@@ -19,7 +22,7 @@ export default function Home({ articles }) {
 
         {renderObjectiveSection(isShown, setIsShown)}
 
-        {/* {renderProjectsSection()} */}
+        {renderProjectsSection()}
       </div>
 
       {/* <div className="articles">
@@ -29,7 +32,7 @@ export default function Home({ articles }) {
       </div> */}
     </>
   );
-}
+};
 
 const renderIntroSection = () => {
   return (
@@ -42,7 +45,7 @@ const renderIntroSection = () => {
             "Interactive Designer",
             "Game Developer",
             "Bedroom Producer",
-            "Creative Nomad",
+            "Digital Nomad",
           ],
           autoStart: true,
           loop: true,
@@ -61,7 +64,10 @@ const renderIntroSection = () => {
   );
 };
 
-const renderObjectiveSection = (isShown, setIsShown) => {
+const renderObjectiveSection = (
+  isShown: boolean,
+  setIsShown: React.Dispatch<React.SetStateAction<boolean>>
+) => {
   return (
     <div className="section">
       <div className="objective">
@@ -76,14 +82,16 @@ const renderObjectiveSection = (isShown, setIsShown) => {
             of <strong>Wonder</strong>
           </p>
           <a>
-            <img
-              src="/images/wonder.png"
-              className="objective__image"
-              onMouseEnter={() => setIsShown(true)}
-              onMouseLeave={() => setIsShown(false)}
-              alt=""
-            />
+            <ImageWrapper height="36px" width="240px">
+              <ImageNext
+                src="/images/wonder.png"
+                onMouseEnter={() => setIsShown(true)}
+                onMouseLeave={() => setIsShown(false)}
+                alt=""
+              />
+            </ImageWrapper>
           </a>
+
           <p>.</p>
         </div>
 
@@ -107,66 +115,28 @@ const renderProjectsSection = () => {
       <div className="section">
         <div className="project">
           <div className="project__detail">
-            <p className="project__title">Inter + Faces</p>
-            <img alt="" src="/images/wonder.png" className="project__image" />
+            <p className="project__title">White Noise Wishes</p>
+            <ImageWrapper
+              width="40px"
+              height="40px"
+              style={{ borderRadius: 100, marginLeft: 16 }}
+            >
+              <ImageNext
+                alt=""
+                src="/images/wonder.png"
+                className="project__ImageNext"
+              />
+            </ImageWrapper>
           </div>
 
           <p className="project__description">
-            An electronic music project that explores the soundscape and
-            soundtrack to a world that is not fully born yet. It is derived from
-            various captivating stories and its immersive worlds, particularly
-            in the form of anime and video game.
+            Video game music project where I explore the mesmerizing soundscapes
+            of captivating worlds that have yet to be born.
           </p>
 
           <div className="project__list">
             <div className="project__list__item">
-              <img
-                alt=""
-                src="/images/inter-2.png"
-                className="project__list__image"
-              />
-              <a className="project__link" />
-            </div>
-            <div className="project__list__item">
-              <img
-                alt=""
-                src="/images/inter-2.png"
-                className="project__list__image"
-              />
-              <a className="project__link" />
-            </div>
-            <div className="project__list__item">
-              <img
-                alt=""
-                src="/images/inter-3.png"
-                className="project__list__image"
-              />
-              <a className="project__link" />
-            </div>
-          </div>
-
-          <div className="project__all red">
-            View All Works <ArrowForwardIcon fontSize="small" />
-          </div>
-        </div>
-      </div>
-      <div className="section">
-        <div className="project">
-          <div className="project__detail">
-            <p className="project__title">Whitenoise Wishes</p>
-            <img alt="" src="/images/wonder.png" className="project__image" />
-          </div>
-
-          <p className="project__description">
-            An electronic music project that explores the soundscape and
-            soundtrack to a world that is not fully born yet. It is derived from
-            various captivating stories and its immersive worlds, particularly
-            in the form of anime and video game.
-          </p>
-
-          <div className="project__list">
-            <div className="project__list__item">
-              <img
+              <ImageNext
                 src="/images/whitenoise-1.png"
                 className="project__list__image"
                 alt=""
@@ -174,7 +144,7 @@ const renderProjectsSection = () => {
               <a className="project__link" />
             </div>
             <div className="project__list__item">
-              <img
+              <ImageNext
                 src="/images/whitenoise-2.png"
                 className="project__list__image"
                 alt=""
@@ -182,7 +152,7 @@ const renderProjectsSection = () => {
               <a className="project__link" />
             </div>
             <div className="project__list__item">
-              <img
+              <ImageNext
                 src="/images/whitenoise-3.png"
                 className="project__list__image"
                 alt=""
@@ -196,25 +166,6 @@ const renderProjectsSection = () => {
           </div>
         </div>
       </div>
-      <div className="section">
-        <div className="project">
-          <div className="project__detail">
-            <p className="project__title">Blindharp Studio</p>
-            <img alt="" src="/images/wonder.png" className="project__image" />
-          </div>
-
-          <p className="project__description">
-            An electronic music project that explores the soundscape and
-            soundtrack to a world that is not fully born yet. It is derived from
-            various captivating stories and its immersive worlds, particularly
-            in the form of anime and video game.
-          </p>
-
-          <div className="project__all blue">
-            Visit Website <ArrowForwardIcon fontSize="small" />
-          </div>
-        </div>
-      </div>
     </>
   );
 };
@@ -223,7 +174,7 @@ export async function getStaticProps() {
   // This happens in the server
 
   // Get files from the article dir
-  const files = fs.readdirSync(path.join("data/articles"));
+  const files = fs.readdirSync(path.join("src/data/articles"));
 
   // Get slug and frontmatter from articles
   const articles = files.map((filename) => {
@@ -232,7 +183,7 @@ export async function getStaticProps() {
 
     // Get frontmatter
     const markdownWithMeta = fs.readFileSync(
-      path.join("data/articles", filename),
+      path.join("src/data/articles", filename),
       "utf-8"
     );
 
@@ -246,7 +197,15 @@ export async function getStaticProps() {
 
   return {
     props: {
-      articles: articles.sort(sortByDate),
+      test: "Halo!",
     },
   };
+
+  // return {
+  //   props: {
+  //     articles: articles.sort(sortByDate),
+  //   },
+  // };
 }
+
+export default HomePage;

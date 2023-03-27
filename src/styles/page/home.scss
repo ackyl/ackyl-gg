@@ -151,12 +151,8 @@
       font-size: 16px;
     }
   }
-  &__image {
-    height: 36px;
+  &__text > a {
     margin: 0 16px;
-    @include sm {
-      height: 24px;
-    }
   }
 }
 
@@ -262,6 +258,7 @@
     &__item {
       flex: 1;
       position: relative;
+      height: 200px;
     }
     &__item:not(:last-child) {
       margin-right: 40px;

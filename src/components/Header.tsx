@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
 
-// create state of hideMenu
-
 export default function Header() {
   const [hideMenu, setHideMenu] = useState(true);
   const [menuClickable, setMenuClickable] = useState(true);

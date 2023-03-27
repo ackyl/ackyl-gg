@@ -4,11 +4,18 @@ import { marked } from "marked";
 import Link from "next/link";
 import path from "path";
 
-export default function ArticlePage({
-  frontmatter: { title, date, subtitle },
-  slug,
-  content,
-}) {
+import { Article } from "../../types/common";
+
+export type Props = {
+  article: Article;
+};
+
+export default function ArticlePage(props: Props) {
+  const {
+    frontmatter: { title, subtitle },
+    content,
+  } = props.article;
+
   return (
     <div className="article">
       <div className="article-header">
