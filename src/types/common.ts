@@ -6,6 +6,6 @@ export type MarkdownObject = {
 
 export type Metadata = {
   title: string;
-  date: string;
-  subtitle: string;
+  order: string;
+  img: string;
 };

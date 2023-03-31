@@ -1,0 +1,23 @@
+.bg {
+  &--red {
+    background-color: var(--red);
+  }
+  &--green {
+    background-color: var(--green);
+  }
+  &--blue {
+    background-color: var(--blue);
+  }
+}
+
+.bd {
+  &--red {
+    border: 1px solid var(--red);
+  }
+  &--green {
+    border: 1px solid var(--green);
+  }
+  &--blue {
+    border: 1px solid var(--blue);
+  }
+}

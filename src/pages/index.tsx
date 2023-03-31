@@ -7,16 +7,16 @@ import Typewriter from "typewriter-effect";
 
 import ImageNext from "../components/ImageNext";
 import ImageWrapper from "../components/ImageWrapper";
+import Project from "../components/Project";
 import { MarkdownObject, Metadata } from "../types/common";
 
 export type Props = {
-  data: MarkdownObject[];
+  timefold: MarkdownObject[];
+  influent: MarkdownObject[];
 };
 
 const HomePage = (props: Props) => {
   const [isShown, setIsShown] = useState(false);
-
-  console.log(props);
 
   return (
     <>
@@ -25,7 +25,7 @@ const HomePage = (props: Props) => {
 
         {renderObjectiveSection(isShown, setIsShown)}
 
-        {renderProjectsSection()}
+        {renderProjectsSection(props.timefold, props.influent)}
       </div>
     </>
   );
@@ -79,7 +79,7 @@ const renderObjectiveSection = (
             of <strong>Wonder</strong>
           </p>
           <a>
-            <ImageWrapper height="36px" width="240px">
+            <ImageWrapper className="objective__image">
               <ImageNext
                 src="/images/wonder.png"
                 onMouseEnter={() => setIsShown(true)}
@@ -106,74 +106,47 @@ const renderObjectiveSection = (
   );
 };
 
-const renderProjectsSection = () => {
+const renderProjectsSection = (
+  timefold: MarkdownObject[],
+  influent: MarkdownObject[]
+) => {
+  const latestTimefold = timefold.slice(0, 3).reverse();
+  const latestInfluent = influent.slice(0, 3).reverse();
+
   return (
     <>
-      <div className="section">
-        <div className="project">
-          <div className="project__detail">
-            <p className="project__title">White Noise Wishes</p>
-            <ImageWrapper
-              width="40px"
-              height="40px"
-              style={{ borderRadius: 100, marginLeft: 16 }}
-            >
-              <ImageNext
-                alt=""
-                src="/images/wonder.png"
-                className="project__ImageNext"
-              />
-            </ImageWrapper>
-          </div>
+      <Project
+        title="Influent"
+        tag="UI Design"
+        description="A UI design project to explore various insights surrounding visual
+        design principles, best practices, and emerging trends through
+        practice."
+        items={latestInfluent}
+        button="View All Works"
+        buttonURL=""
+      ></Project>
 
-          <p className="project__description">
-            Video game music project where I explore the mesmerizing soundscapes
-            of captivating worlds that have yet to be born.
-          </p>
-
-          <div className="project__list">
-            <div className="project__list__item">
-              <ImageNext
-                src="/images/whitenoise-1.png"
-                className="project__list__image"
-                alt=""
-              />
-              <a className="project__link" />
-            </div>
-            <div className="project__list__item">
-              <ImageNext
-                src="/images/whitenoise-2.png"
-                className="project__list__image"
-                alt=""
-              />
-              <a className="project__link" />
-            </div>
-            <div className="project__list__item">
-              <ImageNext
-                src="/images/whitenoise-3.png"
-                className="project__list__image"
-                alt=""
-              />
-              <a className="project__link" />
-            </div>
-          </div>
-
-          <div className="project__all green">
-            View All Works <ArrowForwardIcon fontSize="small" />
-          </div>
-        </div>
-      </div>
+      <Project
+        title="Timefold"
+        tag="Music"
+        description="A musical universe where every song serves as a window into a
+        different world, offering a glimpse into different moments in the
+        imaginary space and non-existent time."
+        items={latestTimefold}
+        button="View All Works"
+        buttonURL=""
+      ></Project>
     </>
   );
 };
 
 export const getStaticProps = async () => {
-  const files = fs.readdirSync(path.join("src/data/projects/whitenoise"));
+  const timefoldFiles = fs.readdirSync(path.join("src/data/timefold"));
 
-  const whitenoiseProjects = files.map((filename) => {
+  const timefoldProjects = timefoldFiles.map((filename) => {
     const slug = filename.replace(".md", "");
     const markdownFile = fs.readFileSync(
-      path.join("src/data/projects/whitenoise", filename),
+      path.join("src/data/timefold", filename),
       "utf-8"
     );
     const markdownRaw = matter(markdownFile);
@@ -183,8 +156,31 @@ export const getStaticProps = async () => {
       slug: slug,
       metadata: {
         title: markdownRaw.data["title"],
-        date: markdownRaw.data["date"],
-        subtitle: markdownRaw.data["subtitle"],
+        order: markdownRaw.data["order"],
+        img: markdownRaw.data["img"],
+      },
+    };
+
+    return markdownObject;
+  });
+
+  const influentFiles = fs.readdirSync(path.join("src/data/influent"));
+
+  const influentProjects = influentFiles.map((filename) => {
+    const slug = filename.replace(".md", "");
+    const markdownFile = fs.readFileSync(
+      path.join("src/data/influent", filename),
+      "utf-8"
+    );
+    const markdownRaw = matter(markdownFile);
+
+    let markdownObject: MarkdownObject = {
+      content: markdownRaw.content,
+      slug: slug,
+      metadata: {
+        title: markdownRaw.data["title"],
+        order: markdownRaw.data["order"],
+        img: markdownRaw.data["img"],
       },
     };
 
@@ -193,7 +189,8 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      data: whitenoiseProjects,
+      timefold: timefoldProjects,
+      influent: influentProjects,
     },
   };
 };

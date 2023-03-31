@@ -4,13 +4,14 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 
 import Cursor from "../components/Cursor";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>𝐀𝐭𝐞𝐥𝐢𝐞𝐫 𝐨𝐟 𝐖𝐨𝐧𝐝𝐞𝐫</title>
+        <title>Ackyl&apos;s Atelier of Wonder</title>
         <link rel="icon" href="/icon.png" />
       </Head>
       <Header />
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <div className="container">
           <Component {...pageProps} />
         </div>
+        {/* <Footer /> */}
       </main>
     </>
   );

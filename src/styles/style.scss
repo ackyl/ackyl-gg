@@ -1,10 +1,12 @@
 @import "./global.scss";
 
 @import "./constants/media-queries.scss";
+@import "./constants/color.scss";
 
 @import "./components/header.scss";
 @import "./components/cursor.scss";
 @import "./components/imageWrapper.scss";
+@import "./components/footer.scss";
 
 @import "./page/home.scss";
 @import "./page/contact.scss";

@@ -2,15 +2,15 @@ type Props = {
   children: JSX.Element | JSX.Element[];
   width?: string;
   height?: string;
-  style?: React.CSSProperties;
+  className: string;
 };
 
 export default function ImageWrapper(props: Props) {
-  const { width, height, children, style } = props;
+  const { width, height, children, className } = props;
   return (
     <div
-      className="imageWrapper"
-      style={{ width: width, height: height, ...style }}
+      className={"imageWrapper " + className}
+      style={{ width: width, height: height }}
     >
       {children}
     </div>
