@@ -1,4 +1,5 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import Link from "next/link";
 
 import { MarkdownObject, Metadata } from "../types/common";
 import ImageNext from "./ImageNext";
@@ -46,10 +47,12 @@ export default function Project(props: Props) {
             })}
           </div>
 
-          <div className="project__all bg--green">
-            <p>{props.button}</p>
-            <ArrowForwardIcon fontSize="small" />
-          </div>
+          <Link href={props.buttonURL}>
+            <div className="project__all bg--green">
+              <p>{props.button}</p>
+              <ArrowForwardIcon fontSize="small" />
+            </div>
+          </Link>
         </div>
       </div>
     </>

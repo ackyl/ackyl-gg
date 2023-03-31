@@ -27,19 +27,19 @@ export default function Header() {
         <div className={hideMenu ? "menu menu--hidden" : "menu"}>
           <div className="menu__item">
             <Link href="/" onClick={onMenuClick}>
-              Influent
+              Home
             </Link>
             <div className="menu__line"></div>
           </div>
           <div className="menu__item">
             <div className="menu__line"></div>
-            <Link href="/" onClick={onMenuClick}>
+            <Link href="/timefold" onClick={onMenuClick}>
               Timefold
             </Link>
           </div>
           <div className="menu__item">
-            <Link href="/" onClick={onMenuClick}>
-              About Me
+            <Link href="/contact" onClick={onMenuClick}>
+              Contact
             </Link>
             <div className="menu__line"></div>
           </div>

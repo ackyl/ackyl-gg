@@ -3,6 +3,7 @@ import useWindowDimensions from "../hooks/useWindowDimensions";
 export default function Cursor() {
   const { isMobileView } = useWindowDimensions();
 
+  console.log("called!");
   customCursor();
 
   return (
@@ -35,6 +36,8 @@ const customCursor = () => {
     });
 
     const links = Array.from(document.querySelectorAll("a"));
+
+    console.log(links);
 
     links.forEach((link) => {
       link.addEventListener("mouseover", () => {

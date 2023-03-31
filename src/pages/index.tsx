@@ -5,6 +5,7 @@ import path from "path";
 import React, { useState } from "react";
 import Typewriter from "typewriter-effect";
 
+import Cursor from "../components/Cursor";
 import ImageNext from "../components/ImageNext";
 import ImageWrapper from "../components/ImageWrapper";
 import Project from "../components/Project";
@@ -27,6 +28,8 @@ const HomePage = (props: Props) => {
 
         {renderProjectsSection(props.timefold, props.influent)}
       </div>
+
+      <Cursor />
     </>
   );
 };
@@ -115,7 +118,7 @@ const renderProjectsSection = (
 
   return (
     <>
-      <Project
+      {/* <Project
         title="Influent"
         tag="UI Design"
         description="A UI design project to explore various insights surrounding visual
@@ -124,7 +127,7 @@ const renderProjectsSection = (
         items={latestInfluent}
         button="View All Works"
         buttonURL=""
-      ></Project>
+      ></Project> */}
 
       <Project
         title="Timefold"
@@ -134,7 +137,7 @@ const renderProjectsSection = (
         imaginary space and non-existent time."
         items={latestTimefold}
         button="View All Works"
-        buttonURL=""
+        buttonURL="/timefold"
       ></Project>
     </>
   );

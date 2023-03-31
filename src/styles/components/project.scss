@@ -1,0 +1,122 @@
+.project {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 960px;
+  align-items: center;
+  justify-content: center;
+  @include sm {
+    width: 100%;
+  }
+  &__detail {
+    display: flex;
+    margin-bottom: 16px;
+    align-items: center;
+  }
+  &__title {
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--white);
+    margin-right: 16px;
+  }
+  &__all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    padding: 16px 24px;
+    border-radius: 40px;
+    font-weight: 600;
+  }
+  &__all > p {
+    margin-right: 8px;
+  }
+  &__description {
+    font-size: 18px;
+    font-weight: 300;
+    text-align: center;
+    margin: 8px 0 32px;
+    color: var(--white);
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 40px;
+    @include sm {
+      flex-direction: column;
+    }
+    &__item {
+      flex: 1;
+      position: relative;
+      height: 200px;
+      border-radius: 16px;
+      overflow: hidden;
+      @include sm {
+        width: 100%;
+        flex: auto;
+      }
+      &__image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 16px;
+      }
+      &__link {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 11;
+      }
+      &__name {
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 8px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0 0 16px 16px;
+      }
+    }
+    &__item:not(:last-child) {
+      margin-right: 40px;
+    }
+  }
+  &__image {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 80px;
+    margin-left: 16px;
+  }
+  &__tags {
+    display: flex;
+  }
+  &_tag {
+    padding: 8px 16px;
+    border-radius: 24px;
+    font-size: 14px;
+  }
+  &_tag:first-child {
+    margin-right: 8px;
+  }
+  &__buttonURL {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.project__wrapper > div:not(:last-child) {
+  margin-bottom: 40px;
+}
