@@ -106,3 +106,18 @@
     transform: translateX(-100%);
   }
 }
+
+.about {
+  &__text {
+    width: 800px;
+    font-size: 24px;
+    > p {
+      margin-bottom: 16px;
+    }
+    @include sm {
+      width: 100%;
+      padding: 0 24px;
+      font-size: 16px;
+    }
+  }
+}

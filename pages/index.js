@@ -17,7 +17,7 @@ export default function Home({ articles }) {
       <div className="home">
         {renderIntroSection()}
 
-        {renderObjectiveSection(isShown, setIsShown)}
+        {/* {renderObjectiveSection(isShown, setIsShown)} */}
 
         {/* {renderProjectsSection()} */}
       </div>
@@ -34,28 +34,29 @@ export default function Home({ articles }) {
 const renderIntroSection = () => {
   return (
     <div className="section">
-      <p className="intro">Welcome to the atelier of a(n)</p>
-
-      <Typewriter
-        options={{
-          strings: [
-            "Interactive Designer",
-            "Game Developer",
-            "Bedroom Producer",
-            "Creative Nomad",
-          ],
-          autoStart: true,
-          loop: true,
-          delay: 70,
-          deleteSpeed: 70,
-        }}
-      />
-
-      <div className="orbit">
-        <div className="orbit__line">
-          <div className="orbit__block"></div>
-          <div className="orbit__circle"></div>
+      <div className="section__intro">
+        {/* <div className="orbit">
+          <div className="orbit__outer__line">
+            <div className="orbit__outer__circle"></div>
+          </div>
+          <div className="orbit__inner__line">
+            <div className="orbit__inner__circle"></div>
+          </div>
+        </div> */}
+        <div className="intro">
+          <p className="intro__text">A DIGITAL</p>
+          <p className="intro__text">EXPERIENCE</p>
+          <Typewriter
+            options={{
+              strings: ["DESIGNER.", "DEVELOPER.", "WORLD BUILDER."],
+              autoStart: true,
+              loop: true,
+              delay: 70,
+              deleteSpeed: 70,
+            }}
+          />
         </div>
+        <div className="ocean"></div>
       </div>
     </div>
   );
@@ -107,8 +108,8 @@ const renderProjectsSection = () => {
       <div className="section">
         <div className="project">
           <div className="project__detail">
-            <p className="project__title">Inter + Faces</p>
-            <img alt="" src="/images/wonder.png" className="project__image" />
+            <p className="project__title">Red Means Error 🔴</p>
+            {/* <img alt="" src="/images/wonder.png" className="project__image" /> */}
           </div>
 
           <p className="project__description">
@@ -153,8 +154,8 @@ const renderProjectsSection = () => {
       <div className="section">
         <div className="project">
           <div className="project__detail">
-            <p className="project__title">Whitenoise Wishes</p>
-            <img alt="" src="/images/wonder.png" className="project__image" />
+            <p className="project__title">The Green Room 🟢</p>
+            {/* <img alt="" src="/images/wonder.png" className="project__image" /> */}
           </div>
 
           <p className="project__description">
@@ -199,8 +200,10 @@ const renderProjectsSection = () => {
       <div className="section">
         <div className="project">
           <div className="project__detail">
-            <p className="project__title">Blindharp Studio</p>
-            <img alt="" src="/images/wonder.png" className="project__image" />
+            <p className="project__title">
+              Eternal Blue by Blindharp Studio 🔵
+            </p>
+            {/* <img alt="" src="/images/wonder.png" className="project__image" /> */}
           </div>
 
           <p className="project__description">

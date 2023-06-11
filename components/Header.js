@@ -27,28 +27,18 @@ export default function Header() {
     return (
       <div className={!initiate ? "menu__wrapper" : ""}>
         <div className={hideMenu ? "menu menu--hidden" : "menu"}>
-          <div className="menu__item">
-            <Link href="/" onClick={onMenuClick}>
-              Project
-            </Link>
-            <div className="menu__line"></div>
-          </div>
-          <div className="menu__item">
-            <div className="menu__line"></div>
-            <Link href="/" onClick={onMenuClick}>
-              Blog
-            </Link>
-          </div>
-          <div className="menu__item">
-            <Link href="/" onClick={onMenuClick}>
-              Contact
-            </Link>
-            <div className="menu__line"></div>
-          </div>
-          <div className="menu__message">
+          {/* <div className="ocean--2"></div> */}
+          <div className="about__text">
             <p>
-              This website is still under construction and is best viewed on
-              desktop.
+              🟣 Digital generalist with a strong creative vision and experience
+              in crafting visual design and technology, proficient in merging
+              both principles to create better user experiences.
+            </p>
+            <p>
+              🟢 Deeply in love with the extensive artistry behind video games -
+              the world-building, storytelling, atmosphere, and mechanics.
+              Currently diving deep into every little aspect of video game
+              development, one piece at a time.
             </p>
           </div>
         </div>
@@ -65,7 +55,7 @@ export default function Header() {
             menuText ? "header__title" : "header__title header__title--black"
           }
         >
-          ackyl.gg
+          DIMAS ACKYL M.
         </Link>
 
         <a
@@ -74,7 +64,7 @@ export default function Header() {
           }
           onClick={onMenuClick}
         >
-          {menuText ? "menu" : "close"}
+          {menuText ? "ABOUT ME" : "CLOSE"}
         </a>
       </header>
 

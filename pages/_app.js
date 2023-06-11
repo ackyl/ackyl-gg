@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>𝔞𝔱𝔢𝔩𝔦𝔢𝔯 𝔬𝔣 𝔴𝔬𝔫𝔡𝔢𝔯</title>
+        <title>Digital Observatory</title>
         <link rel="icon" href="/icon.png" />
       </Head>
       <Header />
