@@ -48,7 +48,7 @@ const renderIntroSection = () => {
           <p className="intro__text">EXPERIENCE</p>
           <Typewriter
             options={{
-              strings: ["DESIGNER.", "DEVELOPER.", "WORLD BUILDER."],
+              strings: ["DESIGNER.", "DEVELOPER."],
               autoStart: true,
               loop: true,
               delay: 70,

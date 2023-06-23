@@ -32,13 +32,7 @@ export default function Header() {
             <p>
               🟣 Digital generalist with a strong creative vision and experience
               in crafting visual design and technology, proficient in merging
-              both principles to create better user experiences.
-            </p>
-            <p>
-              🟢 Deeply in love with the extensive artistry behind video games -
-              the world-building, storytelling, atmosphere, and mechanics.
-              Currently diving deep into every little aspect of video game
-              development, one piece at a time.
+              both principles to create a cohesive end product.
             </p>
           </div>
         </div>
