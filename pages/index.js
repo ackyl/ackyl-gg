@@ -19,7 +19,7 @@ export default function Home({ articles }) {
 
         {/* {renderObjectiveSection(isShown, setIsShown)} */}
 
-        {/* {renderProjectsSection()} */}
+        {renderProjectsSection()}
       </div>
 
       {/* <div className="articles">
@@ -77,24 +77,12 @@ const renderObjectiveSection = (isShown, setIsShown) => {
             of <strong>Wonder</strong>
           </p>
           <a>
-            <img
-              src="/images/wonder.png"
-              className="objective__image"
-              onMouseEnter={() => setIsShown(true)}
-              onMouseLeave={() => setIsShown(false)}
-              alt=""
-            />
+            <img src="/images/wonder.png" className="objective__image" onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)} alt="" />
           </a>
           <p>.</p>
         </div>
 
-        <div
-          className={
-            isShown
-              ? "wonder__wrapper"
-              : "wonder__wrapper wonder__wrapper--hidden"
-          }
-        >
+        <div className={isShown ? "wonder__wrapper" : "wonder__wrapper wonder__wrapper--hidden"}>
           <img alt="" className="wonder" src="/images/wonder-slide.png" />
         </div>
       </div>
@@ -108,43 +96,29 @@ const renderProjectsSection = () => {
       <div className="section">
         <div className="project">
           <div className="project__detail">
-            <p className="project__title">Red Means Error 🔴</p>
+            <p className="project__title">Working as UX Engineer</p>
             {/* <img alt="" src="/images/wonder.png" className="project__image" /> */}
           </div>
 
           <p className="project__description">
-            An electronic music project that explores the soundscape and
-            soundtrack to a world that is not fully born yet. It is derived from
-            various captivating stories and its immersive worlds, particularly
-            in the form of anime and video game.
+            An electronic music project that explores the soundscape and soundtrack to a world that is not fully born yet. It is derived from various captivating stories and its immersive worlds,
+            particularly in the form of anime and video game.
           </p>
 
-          <div className="project__list">
+          {/* <div className="project__list">
             <div className="project__list__item">
-              <img
-                alt=""
-                src="/images/inter-2.png"
-                className="project__list__image"
-              />
+              <img alt="" src="/images/inter-2.png" className="project__list__image" />
               <a className="project__link" />
             </div>
             <div className="project__list__item">
-              <img
-                alt=""
-                src="/images/inter-2.png"
-                className="project__list__image"
-              />
+              <img alt="" src="/images/inter-2.png" className="project__list__image" />
               <a className="project__link" />
             </div>
             <div className="project__list__item">
-              <img
-                alt=""
-                src="/images/inter-3.png"
-                className="project__list__image"
-              />
+              <img alt="" src="/images/inter-3.png" className="project__list__image" />
               <a className="project__link" />
             </div>
-          </div>
+          </div> */}
 
           <div className="project__all red">
             View All Works <ArrowForwardIcon fontSize="small" />
@@ -154,43 +128,29 @@ const renderProjectsSection = () => {
       <div className="section">
         <div className="project">
           <div className="project__detail">
-            <p className="project__title">The Green Room 🟢</p>
+            <p className="project__title">Leading a Small Game Studio</p>
             {/* <img alt="" src="/images/wonder.png" className="project__image" /> */}
           </div>
 
           <p className="project__description">
-            An electronic music project that explores the soundscape and
-            soundtrack to a world that is not fully born yet. It is derived from
-            various captivating stories and its immersive worlds, particularly
-            in the form of anime and video game.
+            An electronic music project that explores the soundscape and soundtrack to a world that is not fully born yet. It is derived from various captivating stories and its immersive worlds,
+            particularly in the form of anime and video game.
           </p>
 
-          <div className="project__list">
+          {/* <div className="project__list">
             <div className="project__list__item">
-              <img
-                src="/images/whitenoise-1.png"
-                className="project__list__image"
-                alt=""
-              />
+              <img src="/images/whitenoise-1.png" className="project__list__image" alt="" />
               <a className="project__link" />
             </div>
             <div className="project__list__item">
-              <img
-                src="/images/whitenoise-2.png"
-                className="project__list__image"
-                alt=""
-              />
+              <img src="/images/whitenoise-2.png" className="project__list__image" alt="" />
               <a className="project__link" />
             </div>
             <div className="project__list__item">
-              <img
-                src="/images/whitenoise-3.png"
-                className="project__list__image"
-                alt=""
-              />
+              <img src="/images/whitenoise-3.png" className="project__list__image" alt="" />
               <a className="project__link" />
             </div>
-          </div>
+          </div> */}
 
           <div className="project__all green">
             View All Works <ArrowForwardIcon fontSize="small" />
@@ -200,17 +160,13 @@ const renderProjectsSection = () => {
       <div className="section">
         <div className="project">
           <div className="project__detail">
-            <p className="project__title">
-              Eternal Blue by Blindharp Studio 🔵
-            </p>
+            <p className="project__title">Other Collaborative Works</p>
             {/* <img alt="" src="/images/wonder.png" className="project__image" /> */}
           </div>
 
           <p className="project__description">
-            An electronic music project that explores the soundscape and
-            soundtrack to a world that is not fully born yet. It is derived from
-            various captivating stories and its immersive worlds, particularly
-            in the form of anime and video game.
+            An electronic music project that explores the soundscape and soundtrack to a world that is not fully born yet. It is derived from various captivating stories and its immersive worlds,
+            particularly in the form of anime and video game.
           </p>
 
           <div className="project__all blue">
@@ -234,10 +190,7 @@ export async function getStaticProps() {
     const slug = filename.replace(".md", "");
 
     // Get frontmatter
-    const markdownWithMeta = fs.readFileSync(
-      path.join("data/articles", filename),
-      "utf-8"
-    );
+    const markdownWithMeta = fs.readFileSync(path.join("data/articles", filename), "utf-8");
 
     const { data: frontmatter } = matter(markdownWithMeta);
 

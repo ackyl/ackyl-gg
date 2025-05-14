@@ -29,11 +29,7 @@ export default function Header() {
         <div className={hideMenu ? "menu menu--hidden" : "menu"}>
           {/* <div className="ocean--2"></div> */}
           <div className="about__text">
-            <p>
-              🟣 Digital generalist with a strong creative vision and experience
-              in crafting visual design and technology, proficient in merging
-              both principles to create a cohesive end product.
-            </p>
+            <p>i really enjoy to sit somewhere between technology, design, and art. especially in love with the escapist nature of a great video game.</p>
           </div>
         </div>
       </div>
@@ -43,21 +39,11 @@ export default function Header() {
   return (
     <>
       <header className="header">
-        <Link
-          href="/"
-          className={
-            menuText ? "header__title" : "header__title header__title--black"
-          }
-        >
+        <Link href="/" className={menuText ? "header__title" : "header__title header__title--black"}>
           DIMAS ACKYL M.
         </Link>
 
-        <a
-          className={
-            menuText ? "header__menu" : "header__menu header__menu--black"
-          }
-          onClick={onMenuClick}
-        >
+        <a className={menuText ? "header__menu" : "header__menu header__menu--black"} onClick={onMenuClick}>
           {menuText ? "ABOUT ME" : "CLOSE"}
         </a>
       </header>
