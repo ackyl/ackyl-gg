@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Digital Observatory</title>
+        <title>Ackyl - UI Designer, UX Engineer, Game Developer</title>
         <link rel="icon" href="/icon.png" />
       </Head>
       <Header />
