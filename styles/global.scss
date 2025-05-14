@@ -132,6 +132,7 @@ h6,
 input {
   color: var(--black);
   line-height: 150%;
+  // letter-spacing: 0.5px;
 }
 
 table {
@@ -155,5 +156,5 @@ ul {
   ---------------------------- */
 body {
   background-color: var(--black);
-  font-family: "Poppins", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
 }

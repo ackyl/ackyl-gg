@@ -96,46 +96,11 @@ const renderProjectsSection = () => {
       <div className="section">
         <div className="project">
           <div className="project__detail">
-            <p className="project__title">Working as UX Engineer</p>
-            {/* <img alt="" src="/images/wonder.png" className="project__image" /> */}
-          </div>
-
-          <p className="project__description">
-            An electronic music project that explores the soundscape and soundtrack to a world that is not fully born yet. It is derived from various captivating stories and its immersive worlds,
-            particularly in the form of anime and video game.
-          </p>
-
-          {/* <div className="project__list">
-            <div className="project__list__item">
-              <img alt="" src="/images/inter-2.png" className="project__list__image" />
-              <a className="project__link" />
-            </div>
-            <div className="project__list__item">
-              <img alt="" src="/images/inter-2.png" className="project__list__image" />
-              <a className="project__link" />
-            </div>
-            <div className="project__list__item">
-              <img alt="" src="/images/inter-3.png" className="project__list__image" />
-              <a className="project__link" />
-            </div>
-          </div> */}
-
-          <div className="project__all red">
-            View All Works <ArrowForwardIcon fontSize="small" />
-          </div>
-        </div>
-      </div>
-      <div className="section">
-        <div className="project">
-          <div className="project__detail">
             <p className="project__title">Leading a Small Game Studio</p>
             {/* <img alt="" src="/images/wonder.png" className="project__image" /> */}
           </div>
 
-          <p className="project__description">
-            An electronic music project that explores the soundscape and soundtrack to a world that is not fully born yet. It is derived from various captivating stories and its immersive worlds,
-            particularly in the form of anime and video game.
-          </p>
+          <p className="project__description">After multitude of game jam entries, currently working on releasing our first commercial game.</p>
 
           {/* <div className="project__list">
             <div className="project__list__item">
@@ -157,20 +122,20 @@ const renderProjectsSection = () => {
           </div>
         </div>
       </div>
+
       <div className="section">
         <div className="project">
           <div className="project__detail">
-            <p className="project__title">Other Collaborative Works</p>
+            <p className="project__title">Collaborating With Other Creatives</p>
             {/* <img alt="" src="/images/wonder.png" className="project__image" /> */}
           </div>
 
-          <p className="project__description">
-            An electronic music project that explores the soundscape and soundtrack to a world that is not fully born yet. It is derived from various captivating stories and its immersive worlds,
-            particularly in the form of anime and video game.
-          </p>
+          {/* Pixy Plum, SB301 Arcade, Black Monet */}
+
+          <p className="project__description">Creating things alone never scratch my itch right, it always more fun to have someone to yap to.</p>
 
           <div className="project__all blue">
-            Visit Website <ArrowForwardIcon fontSize="small" />
+            View All Works <ArrowForwardIcon fontSize="small" />
           </div>
         </div>
       </div>

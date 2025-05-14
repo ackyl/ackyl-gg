@@ -29,7 +29,10 @@ export default function Header() {
         <div className={hideMenu ? "menu menu--hidden" : "menu"}>
           {/* <div className="ocean--2"></div> */}
           <div className="about__text">
-            <p>i really enjoy to sit somewhere between technology, design, and art. especially in love with the escapist nature of a great video game.</p>
+            <p>i really enjoy to sit somewhere between technology, design, and art.</p>
+            <p>especially in love with the escapist nature of a great video game.</p>
+            <p>if you want to hire me profesionally, or</p>
+            <p>just want to just collaborate with me, send me a message</p>
           </div>
         </div>
       </div>
