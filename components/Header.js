@@ -1,3 +1,6 @@
+import EmailIcon from "@mui/icons-material/Email";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -29,10 +32,22 @@ export default function Header() {
         <div className={hideMenu ? "menu menu--hidden" : "menu"}>
           {/* <div className="ocean--2"></div> */}
           <div className="about__text">
-            <p>i really enjoy to sit somewhere between technology, design, and art.</p>
-            <p>especially in love with the escapist nature of a great video game.</p>
-            <p>if you want to hire me profesionally, or</p>
-            <p>just want to just collaborate with me, send me a message</p>
+            <p>I really enjoy crafting digital products that intertwine technology, design, and art.</p>
+            <p>Especially in love with the escapist nature of a great video game;</p>
+            <p>And the way interactive websites can spark conversations and boost engagement.</p>
+            <p>If you are keen to create cool things together, let&apos;s talk~</p>
+          </div>
+
+          <div className="about__icons">
+            <a href="mailto:ackylmohamad@gmail.com" target="_blank" class="about__link">
+              <EmailIcon fontSize="large" />
+            </a>
+            <a href="https://www.instagram.com/ac.kyl/" target="_blank" class="about__link">
+              <InstagramIcon fontSize="large" />
+            </a>
+            <a href="https://www.linkedin.com/in/ackyl/" target="_blank" class="about__link">
+              <LinkedInIcon fontSize="large" />
+            </a>
           </div>
         </div>
       </div>

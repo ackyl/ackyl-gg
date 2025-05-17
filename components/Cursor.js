@@ -7,11 +7,7 @@ export default function Cursor() {
 
   return (
     <>
-      <div
-        className={
-          !isMobileView ? "cursor__wrapper" : "cursor__wrapper--hidden"
-        }
-      >
+      <div className={!isMobileView ? "cursor__wrapper" : "cursor__wrapper--hidden"}>
         <div className="cursor"></div>
         <div className="cursor__outer"></div>
       </div>

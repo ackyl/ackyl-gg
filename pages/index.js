@@ -100,37 +100,37 @@ const renderProjectsSection = () => {
             {/* <img alt="" src="/images/wonder.png" className="project__image" /> */}
           </div>
 
-          <p className="project__description">After multitude of game jam entries, currently working on releasing our first commercial game.</p>
+          <p className="project__description">After a multitude of game jam entries, currently working on releasing our first commercial game.</p>
 
-          {/* <div className="project__list">
-            <div className="project__list__item">
+          <div className="project__list">
+            {/* <div className="project__list__item">
               <img src="/images/whitenoise-1.png" className="project__list__image" alt="" />
               <a className="project__link" />
-            </div>
+            </div> */}
             <div className="project__list__item">
-              <img src="/images/whitenoise-2.png" className="project__list__image" alt="" />
+              <img src="/images/sunspoken-2.png" className="project__list__image" alt="" />
               <a className="project__link" />
             </div>
             <div className="project__list__item">
-              <img src="/images/whitenoise-3.png" className="project__list__image" alt="" />
+              <img src="/images/sunspoken-1.png" className="project__list__image" alt="" />
               <a className="project__link" />
             </div>
-          </div> */}
+          </div>
 
           <div className="project__all green">
-            View All Works <ArrowForwardIcon fontSize="small" />
+            Play the Games &nbsp; <ArrowForwardIcon fontSize="small" />
+            <a href="https://sunspoken.itch.io" target="_blank" className="project__link" />
           </div>
         </div>
       </div>
 
-      <div className="section">
+      {/* Collaborate */}
+      {/* <div className="section">
         <div className="project">
           <div className="project__detail">
             <p className="project__title">Collaborating With Other Creatives</p>
-            {/* <img alt="" src="/images/wonder.png" className="project__image" /> */}
+            <img alt="" src="/images/wonder.png" className="project__image" />
           </div>
-
-          {/* Pixy Plum, SB301 Arcade, Black Monet */}
 
           <p className="project__description">Creating things alone never scratch my itch right, it always more fun to have someone to yap to.</p>
 
@@ -138,7 +138,7 @@ const renderProjectsSection = () => {
             View All Works <ArrowForwardIcon fontSize="small" />
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

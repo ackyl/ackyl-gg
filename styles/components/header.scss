@@ -110,7 +110,6 @@
 
 .about {
   &__text {
-    width: 860px;
     font-size: 24px;
     text-align: center;
 
@@ -122,6 +121,15 @@
       width: 100%;
       padding: 0 24px;
       font-size: 16px;
+    }
+  }
+
+  &__link {
+    color: var(--black);
+    margin-right: 8px;
+
+    &:visited {
+      color: inherit;
     }
   }
 }
