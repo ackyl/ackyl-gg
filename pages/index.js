@@ -19,7 +19,7 @@ export default function Home({ articles }) {
 
         {/* {renderObjectiveSection(isShown, setIsShown)} */}
 
-        {renderProjectsSection()}
+        {/* {renderProjectsSection()} */}
       </div>
 
       {/* <div className="articles">
